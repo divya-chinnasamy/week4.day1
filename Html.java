@@ -24,13 +24,12 @@ public class Html {
 		obj.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
 		//2. Get the count of number of rows
-		//3. Get the count of number of columns
-		
 		List<WebElement> rows = obj.findElements(By.xpath("//table[@class='attributes-list']//tr"));
 		int rowSize = rows.size(); 
 		System.out.println("Total number of rows in the table: " + rowSize);
 		
-		List<WebElement> cols = obj.findElements(By.xpath("//table[@class='attributes-list']//tr[2]//td"));
+		//3. Get the count of number of columns
+		List<WebElement> cols = obj.findElements(By.xpath("//table[@class='attributes-list']//tr//th"));
 		System.out.println("Total number of coloumns in the table: " +cols.size());
 	}
 
